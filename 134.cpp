@@ -30,3 +30,57 @@ public:
         return -1;
     }
 };
+
+//所以来思考有没有什么简便的方法，如果走到一个站无法前进，那么从中间任何一站出发到此站都无法，因为之前可以走的话油箱的油可能更多
+//所以按照这个思路来运行的话，可以简化成从头开始跑，但是到哪站停了之后就从哪站开始再跑，而不需要每一个都跑一次，这样就可以把时间复杂度降低到O(n).
+class Solution {
+public:
+    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
+        int siz;
+        siz=gas.size();
+        vector<int>t(siz);
+        for(int i=0;i<siz;i++)t[i]=gas[i]-cost[i];
+        for(int i=0;i<siz;){
+            int tmp=t[i];
+            if(tmp<0){
+                i++;
+                continue;
+            }
+            int j=(i+1)%siz;
+            while(j!=i){
+                tmp+=t[j];
+                if(tmp<0)break;//j到不了
+                j=(j+1)%siz;
+            }
+            if(j==i)return i;
+            else if(j>i)i=j;
+            else return -1;
+        }      
+        return -1;
+    }
+};
+/不过这样会占有额外很多的空间 所以不需要额外创建数组来储存差值 
+class Solution {
+public:
+    int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
+        int siz;
+        siz=gas.size();
+        for(int i=0;i<siz;){
+            int tmp=gas[i]-cost[i];
+            if(tmp<0){
+                i++;
+                continue;
+            }
+            int j=(i+1)%siz;
+            while(j!=i){
+                tmp+=gas[j]-cost[j];
+                if(tmp<0)break;//j到不了
+                j=(j+1)%siz;
+            }
+            if(j==i)return i;
+            else if(j>i)i=j;
+            else return -1;
+        }      
+        return -1;
+    }
+};
