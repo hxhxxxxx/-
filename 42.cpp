@@ -97,3 +97,33 @@ public:
     }
 };
 这种方法是可行的，但是超出了时间限制
+然后也是参考了别人的做法
+用相减的方法
+int length = height.size();
+        //剪枝，数组长度小于3时不可能接到雨水
+        if(length < 3) return 0;
+        int l = 0, r = length - 1;
+
+        //定义前一次计算时的高度
+        int preHeight = 0;
+        //定义雨水 + 陆地的总面积
+        int totalArea = 0;
+        //定义陆地面积
+        int landArea = 0;
+
+        //显然总陆地面积为数组所有数求和
+        landArea = accumulate(height.begin(), height.end(), 0);
+
+        while(l < r) {
+            //跳过小于等于前一次计算的值
+            while(l < r && height[l] <= preHeight) l++;
+            while(l < r && height[r] <= preHeight) r--;
+
+            //计算当前高度的面积 = （当前左右指针中较小的值 - 前一次计算的高度）* 宽度
+            totalArea += (min(height[l], height[r]) - preHeight) * (r - l + 1);
+            //更新前一次的高度
+            preHeight = min(height[l], height[r]);
+        }
+
+        return totalArea - landArea;
+
