@@ -1,0 +1,4 @@
+哈希表
+unordered_map<char,char>t;
+如果要创建新的，只需要t[x]=y，就可以创建一对键值对(key,value)
+如果要判断哈希表中有无某个key元素x，可以使用t.count(x)这个函数
