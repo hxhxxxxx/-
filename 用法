@@ -8,3 +8,12 @@ for(auto i=t.begin();i!=t.end();i++{
     v.push_back(i->second);//这里有点像struct指针的用法
 }
 在哈希表中查找某个值，t.find(key)如果找到返回该点位置，如果找不到那么返回哈希表的最后位置，即t.end()，在第一题中就有用到
+
+上面的用法是哈希表两个元素
+
+如果想建立哈希表单个元素 那么是使用 unordered_set<int>set
+插入的话是用 set.insert()，如果遇到相同元素是不会插入的
+查找某个元素 :set.count(x)
+
+for循环中迭代器的用法
+for(auto num:set)
