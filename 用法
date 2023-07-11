@@ -2,3 +2,8 @@
 unordered_map<char,char>t;
 如果要创建新的，只需要t[x]=y，就可以创建一对键值对(key,value)
 如果要判断哈希表中有无某个key元素x，可以使用t.count(x)这个函数
+在49题中，用到了对哈希表的遍历,
+for(auto i=t.begin();i!=t.end();i++{
+    vector<char>v;
+    v.push_back(i->second);//这里有点像struct指针的用法
+}
