@@ -7,3 +7,4 @@ for(auto i=t.begin();i!=t.end();i++{
     vector<char>v;
     v.push_back(i->second);//这里有点像struct指针的用法
 }
+在哈希表中查找某个值，t.find(key)如果找到返回该点位置，如果找不到那么返回哈希表的最后位置，即t.end()，在第一题中就有用到
