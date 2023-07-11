@@ -18,3 +18,23 @@ public:
         return true;
     }
 };
+
+稍微优化一下代码，减少一下数组的使用
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        vector<int>a(26,0);
+        int siz1=s.size();
+        int siz2=t.size();
+        if(siz1!=siz2)return false;
+        for(int i=0;i<siz1;i++){
+            a[s[i]-'a']+=1;
+            a[t[i]-'a']-=1;
+        }
+        for(int i=0;i<26;i++){
+            if(a[i])return false;
+        }
+        return true;
+    }
+};
+可以在一个数组中完成
