@@ -17,3 +17,5 @@ for(auto i=t.begin();i!=t.end();i++{
 
 for循环中迭代器的用法
 for(auto num:set)
+
+转化成字符串的函数 ： to_string()
