@@ -19,3 +19,10 @@ for循环中迭代器的用法
 for(auto num:set)
 
 转化成字符串的函数 ： to_string()
+
+栈的使用
+stack<int>t
+在栈顶插入元素：t.push()
+出栈操作：t.pop()
+判断栈是否为空：t.empty()
+返回栈顶元素： t.top()
