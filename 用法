@@ -14,11 +14,14 @@ for(auto i=t.begin();i!=t.end();i++{
 如果想建立哈希表单个元素 那么是使用 unordered_set<int>set
 插入的话是用 set.insert()，如果遇到相同元素是不会插入的
 查找某个元素 :set.count(x)
+查找某个元素：set.find(x)!=set.end()如果找不到就会到最后一个位置
 
 for循环中迭代器的用法
 for(auto num:set)
 
+字符串
 转化成字符串的函数 ： to_string()
+提取字符串中子串的函数：substr(pos,len) 从位置pos开始取长度为len的子串，如果pos越界会报错,如果pos+len越界，那么会取到底而不是报错
 
 栈的使用
 stack<int>t
