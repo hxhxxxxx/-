@@ -12,6 +12,7 @@ public:
         dp[0]=true;
         for(int i=1;i<=s.size();i++){
             for(int j=0;j<i;j++){
+                    //这里也可以用count函数来判断 if(dp[j]&& worddicset.count(s.substr(j,i-j)))
                 if(dp[j]&& worddicset.find(s.substr(j,i-j))!=worddicset.end()){
                     dp[i]=true;
                     break;
