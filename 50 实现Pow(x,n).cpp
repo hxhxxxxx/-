@@ -35,3 +35,17 @@ public:
     }
 };
 不过这个方法对于n比较小的情况是可以应对的，但是对于n比较大的时候会超时，所以需要别的方法
+也就是要快速相乘，不要一个一个x相乘，用快排的思路，一半一半地乘
+
+class Solution {
+public:
+    double quickmul(double x,int n){
+        if(n==0)return 1.0;
+        double y=quickmul(x,n/2);
+        return (n%2)?y*y*x:y*y;
+    }
+    double myPow(double x, int n) {
+        long long N=n;
+        return (N>0)?quickmul(x,N):1.0/quickmul(x,-N);
+    }
+};
