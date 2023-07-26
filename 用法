@@ -41,3 +41,4 @@ vector容器的使用
 vector的开头与结尾位置: t.begin(), t.end()
 在任意位置插入元素：t.insert(pos,val) pos一般用t.begin()+k来表示
 对vector中的值进行排序 sort(pos,pos)默认是从小到大排序，一般对整个数组的排序是：sort(t.begin(),t.end())
+对vector中的元素进行删除：t.erase(begin,end)
