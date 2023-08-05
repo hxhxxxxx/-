@@ -21,7 +21,9 @@ for(auto num:set)
 
 字符串
 转化成字符串的函数 ： to_string()
-提取字符串中子串的函数：substr(pos,len) 从位置pos开始取长度为len的子串，如果pos越界会报错,如果pos+len越界，那么会取到底而不是报错
+提取字符串中子串的函数：substr(int pos,int len) 从位置pos开始取长度为len的子串，如果pos越界会报错,如果pos+len越界，那么会取到底而不是报错
+在字符串最后添加元素：1.+= 2.t.push_back()
+删除字符串最后一位元素：1.用提取子串的方法 2.用t.pop_back()
 
 栈的使用
 stack<int>t
