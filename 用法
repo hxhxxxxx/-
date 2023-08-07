@@ -44,3 +44,7 @@ vector的开头与结尾位置: t.begin(), t.end()
 在任意位置插入元素：t.insert(pos,val) pos一般用t.begin()+k来表示
 对vector中的值进行排序 sort(pos,pos)默认是从小到大排序，一般对整个数组的排序是：sort(t.begin(),t.end())
 对vector中的元素进行删除：t.erase(begin,end)
+对数组重构：一维数组： t.resize(int t)   如果要固定初始元素的值，t.resize(int len,int val);
+          二维数组： vector<vector<int>>t;
+                   vector<int>tmp(int n);
+                   t.resize(m,tmp);  //这样就可以重构一个m*n的二维数组
