@@ -28,16 +28,29 @@ for(auto num:set)
 栈的使用
 stack<int>t
 在栈顶插入元素：t.push()
-出栈操作：t.pop()
+出栈操作：t.pop()  
 判断栈是否为空：t.empty()
 返回栈顶元素： t.top()
+
+
 
 队列的使用
 queue<int>t
 在队列后面插入元素：t.push()
-出队操作：t.pop()
+出队操作：t.pop()    //去除的是队头元素
 判断队列是否为空：t.empty()
 返回队列最前面元素： t.front()
+返回队列最后面元素： t.back()
+
+双向队列
+deque<int>t  
+判断队列是否为空：t.empty()
+返回队列最前面元素： t.front()
+返回队列最后面元素： t.back()
+在队列前面插入元素：t.push_front()
+在队列后面插入元素：t.push_back()
+出队头元素操作：t.pop_front()
+出队尾元素操作：t.pop_back() 
 
 vector容器的使用
 vector的开头与结尾位置: t.begin(), t.end()
