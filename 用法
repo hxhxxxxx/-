@@ -61,3 +61,6 @@ vector的开头与结尾位置: t.begin(), t.end()
           二维数组： vector<vector<int>>t;
                    vector<int>tmp(int n);
                    t.resize(m,tmp);  //这样就可以重构一个m*n的二维数组
+
+初始化一个二维数组的方法：int dp[siz2+1][siz1+1];
+                      memset(dp,0,sizeof (dp));
