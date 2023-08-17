@@ -15,3 +15,27 @@ public:
         return 0;
     }
 };
+
+
+这里还有另外一种做法
+同归于尽法，找到两个不同的元素，同时减掉，最后出现的就是一半以上的数
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int siz=nums.size();
+        if(siz==1)return nums[0];
+        int win=nums[0];//记录胜者
+        int cnt=1;
+        for(int i=1;i<siz;i++){
+            if(win==nums[i])cnt++;
+            else if(cnt==0){
+                win=nums[i];
+                cnt=1;//如果原先的胜者被干掉了那么引入新的胜者
+            }else{
+                cnt--;
+            }
+        }
+        return win;
+    }
+};
