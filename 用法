@@ -64,3 +64,13 @@ vector的开头与结尾位置: t.begin(), t.end()
 
 初始化一个二维数组的方法：int dp[siz2+1][siz1+1];
                       memset(dp,0,sizeof (dp));
+
+二元组的创建与使用
+初始化一个二元组：pair<int,int>t;
+创建一个二元组：make_dir(i,j)
+返回二元组的第一个元素：t.first
+返回二元组第二个元素：t.second       不需要加小括号()
+
+
+
+
