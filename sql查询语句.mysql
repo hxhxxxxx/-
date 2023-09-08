@@ -1,0 +1,29 @@
+查询满足某些条件的基本语法
+select * from table where condition
+条件判断 = , !=  ,is NULL , is not NULL
+
+例子
+select name 
+from Customer
+where referee_id!=2 or referee_id is NULL
+
+注意点：
+MySQL 使用三值逻辑 —— TRUE, FALSE 和 UNKNOWN。任何与 NULL 值进行的比较都会与第三种值 UNKNOWN 做比较。
+这个“任何值”包括 NULL 本身！这就是为什么 MySQL 提供 IS NULL 和 IS NOT NULL 两种操作来对 NULL 特殊判断。
+
+
+选择多个输出
+select name,population,area
+from world
+where population >= 25000000 or area >= 3000000
+
+不重复元素 distinct 重命名 as 排序order by
+select distinct author_id as id
+from views
+where author_id=viewer_id
+order by id
+
+长度统计:char_length
+select tweet_id 
+from tweets
+where char_length(content)>15
