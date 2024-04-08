@@ -15,6 +15,7 @@ for(auto i=t.begin();i!=t.end();i++{
 插入的话是用 set.insert()，如果遇到相同元素是不会插入的
 查找某个元素 :set.count(x)
 查找某个元素：set.find(x)!=set.end()如果找不到就会到最后一个位置
+删除某个元素:set.erase(c)
 
 for循环中迭代器的用法
 for(auto num:set)
