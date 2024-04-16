@@ -63,6 +63,7 @@ vector的开头与结尾位置: t.begin(), t.end()
                    vector<int>tmp(int n);
                    t.resize(m,tmp);  //这样就可以重构一个m*n的二维数组
 交换数组中的两个数:swap(nums[i],nums[j]);
+在vector数组中对==有进行重构，可以直接判断两个数组是否完全相同，判断顺序如下：1.先判断长度是否相同  2.判断相对位置的元素值是否相同
 
 初始化一个二维数组的方法：int dp[siz2+1][siz1+1];
                       memset(dp,0,sizeof (dp));
